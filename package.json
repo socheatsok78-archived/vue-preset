@@ -1,0 +1,16 @@
+{
+  "name": "cli-plugin-socheatsok78-preset",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:socheatsok78/vue-preset.git",
+  "author": "Socheat Sok <alex@socheat.net>",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "cli",
+    "socheatsok78-preset"
+  ],
+  "devDependencies": {
+    "@vue/cli-shared-utils": "^4.3.1"
+  }
+}
