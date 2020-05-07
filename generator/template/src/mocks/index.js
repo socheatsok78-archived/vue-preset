@@ -25,6 +25,6 @@ export default async function initMocks() {
 /**
  * Start Mock Server
  */
-if (process.env.VUE_APP_ENABLE_MIMIC) {
+if (process.env.VUE_APP_ENABLE_MIMIC === 'true') {
     initMocks();
 }
