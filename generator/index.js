@@ -18,7 +18,10 @@ module.exports = (api, options, rootOptions) => {
   // Generate assets in "src"
   api.render('./template')
 
-  // Inject Imports
+  // Inject i18n to root
   api.injectImports(api.entryFile, `import i18n from './i18n'`)
   api.injectRootOptions(api.entryFile, `i18n`)
+
+  // Inject mocks to root
+  api.injectImports(api.entryFile, `import './mocks'`)
 }
