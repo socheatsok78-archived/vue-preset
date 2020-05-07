@@ -24,4 +24,7 @@ module.exports = (api, options, rootOptions) => {
 
   // Inject mocks to root
   api.injectImports(api.entryFile, `import './mocks'`)
+
+  // Inject debug mode to root
+  api.injectImports(api.entryFile, `import './app/utils/debug'`)
 }
