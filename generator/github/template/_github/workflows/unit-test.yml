@@ -7,6 +7,7 @@ on:
 jobs:
   lint-run:
     runs-on: ubuntu-latest
+    name: ESLint
     strategy:
       matrix:
         node-version: [12.x, 13.x]

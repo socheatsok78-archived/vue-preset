@@ -7,9 +7,10 @@ on:
 jobs:
   lint-run:
     runs-on: ubuntu-latest
+    name: ESLint
     strategy:
       matrix:
-        node-version: [12.x, 13.x]
+        node-version: [13.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -30,7 +31,7 @@ jobs:
         with:
           browser: chrome
           headless: true
-          start: npm run serve
+          start: yarn serve
           wait-on: http://localhost:8080/
           config_file: cypress.json
           spec: "tests/e2e/**/*"
