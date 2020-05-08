@@ -1,15 +1,16 @@
 const packages = require('./utils/packages')
 
-const ApiPlugin = require('./utils/api.plugin')
-const i18nPlugin = require('./utils/i18n.plugin')
-const MockPlugin = require('./utils/mocks.plugin')
+const VuePlugin = require('./vue/vue.plugin')
+const ApiPlugin = require('./app/app.plugin')
+const i18nPlugin = require('./i18n/i18n.plugin')
+const MockPlugin = require('./mocks/mocks.plugin')
 
 module.exports = (api, options, rootOptions) => {
   // Install additional dependencies
   api.extendPackage(packages)
 
   // Generate assets in "src"
-  api.render('./template/vue')
+  VuePlugin.install(api)
 
   // Inject application to root
   ApiPlugin.install(api)
