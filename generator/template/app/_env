@@ -1,0 +1,5 @@
+---
+extend: ./_env.example
+to: .env
+unless_exists: true
+---
