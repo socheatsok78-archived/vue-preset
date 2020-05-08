@@ -8,7 +8,7 @@
         },
         "@vue/cli-plugin-vuex": {},
         "@vue/cli-plugin-eslint": {
-            "config": "airbnb",
+            "config": "standard",
             "lintOn": [
                 "save",
                 "commit"
