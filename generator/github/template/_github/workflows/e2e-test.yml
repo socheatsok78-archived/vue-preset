@@ -1,0 +1,38 @@
+name: End-to-end tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 13.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn lint
+        env:
+          CI: true
+
+  e2e-run:
+    runs-on: ubuntu-latest
+    name: E2E on Chrome
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v1
+        with:
+          browser: chrome
+          headless: true
+          start: npm run serve
+          wait-on: http://localhost:8080/
+          config_file: cypress.json
+          spec: "tests/e2e/**/*"
+        env:
+          CYPRESS_baseUrl: http://localhost:8080/
