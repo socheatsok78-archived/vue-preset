@@ -24,6 +24,7 @@ jobs:
 
   jest-run:
     runs-on: ubuntu-latest
+    name: Jest
     strategy:
       matrix:
         node-version: [12.x, 13.x]
